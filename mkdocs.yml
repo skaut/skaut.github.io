@@ -1,0 +1,14 @@
+site_name:
+site_url:
+#site_description: Project documentation with Markdown.
+
+repo_url:
+
+site_dir:
+
+pages:
+        #    - ['index.md', 'Home']
+
+#todo
+google_analytics: ['UA-27795084-5', 'mkdocs.org']
+theme: readthedocs
