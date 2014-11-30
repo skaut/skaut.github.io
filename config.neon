@@ -1,0 +1,73 @@
+extensions:
+    - php
+
+exclude:
+    - tests/
+    - Tests/
+    - vendor/
+
+charset:
+    - UTF-8
+
+# elements with this name prefix will be considered as the "main project" (the rest will be considered as libraries)
+main: Skautis
+
+#Zmeni copyscript
+title: ApiGen API
+
+# base url used for sitemap (useful for public doc)
+baseUrl: http://skaut.github.io
+
+# custom search engine id, will be used by search box
+# googleCseId: 011549293477758430224
+
+#TODO add analytics
+# Google Analytics tracking code
+# googleAnalytics: UA-35236-5
+
+# choose ApiGen own template theme
+templateTheme: default # default [other options: bootstrap]
+
+
+# the way elements are grouped in menu
+groups: auto # default [other options: namespace, packages, none], auto will detect namespace first, than packages
+
+# element supported by autocomplete in search input
+autocomplete:
+    # default
+    - classes
+    - constants
+    - functions
+    # other
+    - methods
+    - properties
+    - classconstants
+
+# access levels of included method and properties
+accessLevels:
+    # default
+    - public
+    - protected
+    # other
+    # - private
+
+# include elements marked as @internal/{@internal}
+internal: false # default [true]
+
+# generate documentation for PHP internal classes
+php: true # default [false]
+
+# generate highlighted source code for elements
+sourceCode: true # default [false]
+
+# generate tree view of classes, interfaces, traits and exceptions
+tree: true # default [false]
+
+# generate documentation for deprecated elements
+deprecated: true # default [false]
+
+# generate list of tasks with @todo annotation
+todo: true # default [true]
+
+# add link to ZIP archive of documentation
+download: true # default [true]

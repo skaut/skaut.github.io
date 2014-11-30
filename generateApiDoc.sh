@@ -12,6 +12,9 @@ for url in $urls; do
 	repName=$(echo "$url" | rev | cut -d/ -f1 | cut -d. -f2- | rev)
 	git clone "$url" tmp;
 
+	#Upravi a nakopiruje konfigurak
+	cat config.neon | sed "s/title: .*/title: $repName/" > tmp/config.neon
+
 	apigen --source tmp --destination "api/$repName"
 
 	rm -rf tmp;
