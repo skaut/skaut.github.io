@@ -39,7 +39,7 @@ function copyApiConfig()
     copy("defaults/$configName", "tmp/$configName");
 }
 
-function copyDocsConfig()
+function copyDocsConfig(Config $config)
 {
     $configName = 'couscous.yml';
 
@@ -47,7 +47,9 @@ function copyDocsConfig()
         return;
     }
 
-    copy("defaults/$configName", "tmp/$configName");
+    $configFile = file_get_contents("defaults/$configName");
+    $configFile .= "\nbaseUrl: http://skaut.github.io/docs/{$config->getName()}";
+    file_put_contents("tmp/$configName", $configFile);
 }
 
 function generateProjectDocs(Config $config)
@@ -59,7 +61,7 @@ function generateProjectDocs(Config $config)
     $apiDir = "api/{$config->getName()}";
     shell_exec("./vendor/bin/apigen generate --source tmp --destination '$apiDir'");
 
-    copyDocsConfig();
+    copyDocsConfig($config);
     $docsDir = "../docs/{$config->getName()}";
     echo shell_exec("cd tmp && ../vendor/bin/couscous generate --target=$docsDir");
 }

@@ -1,45 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
-          rel='stylesheet' type='text/css'>
+        <title></title>
 
-    <link rel="stylesheet" href="/css/theme.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/theme-fixes.css" type="text/css"/>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
-</head>
-<body class="wy-body-for-nav">
+        <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/font-awesome.min.css">
+        <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/highlight.tomorrow-night.css">
+        <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/main.css">
+    </head>
+    <body>
 
-    <div class="wy-grid-for-nav">
+        <header class="navbar navbar-default navbar-fixed-top">
 
-        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-            <div class="wy-side-nav-search">
-                <a href="/" class="fa fa-home"> The title</a>
-            </div>
+            <a class="navbar-brand" href="http://skaut.github.io/docs/Skautis/">
+                The title
+                <small class="hidden-xs hidden-sm">
+                    This is the default subtitle!
+                </small>
+            </a>
 
-            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                                    </ul>
-            </div>
-            &nbsp;
-        </nav>
+            
+        </header>
 
-        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <main class="container">
+            <div class="row">
 
-                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                <a href="/">The title</a>
-            </nav>
-
-
-                        <div class="wy-nav-content">
-                <div class="rst-content">
-                    <div role="main" class="document">
-                        <p><a href="https://travis-ci.org/skaut/Skautis"><img src="https://travis-ci.org/skaut/Skautis.svg?branch=2.x" alt="Build Status" /></a> <a href="https://scrutinizer-ci.com/g/skaut/Skautis/?branch=2.x"><img src="https://scrutinizer-ci.com/g/skaut/Skautis/badges/quality-score.png?b=2.x" alt="Scrutinizer Code Quality" /></a> <a href="https://scrutinizer-ci.com/g/skaut/Skautis/?branch=2.x"><img src="https://scrutinizer-ci.com/g/skaut/Skautis/badges/coverage.png?b=2.x" alt="Code Coverage" /></a>
+                
+                <section class="col-sm-12">
+                    <p><a href="https://travis-ci.org/skaut/Skautis"><img src="https://travis-ci.org/skaut/Skautis.svg?branch=2.x" alt="Build Status" /></a> <a href="https://scrutinizer-ci.com/g/skaut/Skautis/?branch=2.x"><img src="https://scrutinizer-ci.com/g/skaut/Skautis/badges/quality-score.png?b=2.x" alt="Scrutinizer Code Quality" /></a> <a href="https://scrutinizer-ci.com/g/skaut/Skautis/?branch=2.x"><img src="https://scrutinizer-ci.com/g/skaut/Skautis/badges/coverage.png?b=2.x" alt="Code Coverage" /></a>
 <a href="https://packagist.org/packages/skautis/skautis"><img src="https://poser.pugx.org/skautis/skautis/v/stable.svg" alt="Latest Stable Version" /></a> <a href="https://packagist.org/packages/skautis/skautis"><img src="https://poser.pugx.org/skautis/skautis/v/unstable.svg" alt="Latest Unstable Version" /></a> <a href="https://packagist.org/packages/skautis/skautis"><img src="https://poser.pugx.org/skautis/skautis/license.svg" alt="License" /></a></p>
 <h1 id="skautis">SkautIS</h1>
 <p>PHP knihovna pro připojení do <a href="https://is.skaut.cz/">Skautisu</a></p>
@@ -51,31 +42,22 @@ $skautis-&gt;org-&gt;unitAll(array("ID_UnitParent"=&gt;$myUnitId))</code></pre>
 <p>Podrobný návoud v <a href="docs/index.html">dokumentaci</a>.</p>
 <h2 id="poadavky">Požadavky</h2>
 <p>PHP 5.4 a novější. Detaily v <a href="./composer.json">composer.json</a></p>
-                    </div>
+                </section>
 
-                    <footer>
-                        <hr/>
-                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
-                    </footer>
-
-                </div>
             </div>
+        </main>
 
-        </section>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="http://yandex.st/highlightjs/7.5/highlight.min.js"></script>
 
-    </div>
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
 
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script src="/js/theme.js"></script>
-
-    <script>
-        $(function() {
-            // Syntax highlighting
-            hljs.initHighlightingOnLoad();
-        });
-    </script>
-
-</body>
+    </body>
 </html>
