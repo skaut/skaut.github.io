@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="http://skaut.github.io/docs/Skautis/" class="fa fa-home"> The title</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="http://skaut.github.io/docs/Skautis/">The title</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+                    <div role="main" class="document">
+                        <h1 id="prihlaseni">Prihlaseni</h1>
+<p>Celý proces přihlášení do externí aplikace je popsán v <a href="http://is.skaut.cz/napoveda/programatori.3-naprogramovani-obslouzeni-uspesneho-prihlaseni-a-odhlaseni.ashx#Hodnoty_zaslan%C3%A9_webov%C3%A9_str%C3%A1nce_po_%C3%BAsp%C4%9B%C5%A1n%C3%A9m_p%C5%99ihl%C3%A1%C5%A1en%C3%AD_u%C5%BEivatele_0">dokumentaci SkautISu</a>. Knihovna tento proces velmi zjednodušuje.i</p>
+<h2 id="generovn-odkazu-pro-pihlen">Generování odkazu pro přihlášení</h2>
+<p>Knihovna umožňuje vygenerovat odkaz, který přivede uživatele na stránky skautisu a po úspěšném příhlášení ho SkautIS přesměruje zpět do aplikace na předem definovanou adresu.</p>
+<pre><code class="language-php">&lt;?php
+//Odkaz na který je uživatel přesměrován po úspěšném přihlášení
+$backLink = "https://moje-skautska-aplikace.skaut.cz/skautis-login-confirm";
+
+//Vygenerování odkazu
+$loginUrl = $skautis-&gt;getLoginUrl($backLink);
+
+//Odkaz je klasická URL která se použít v jakémkoliv templatovacím jazyce nebo rovnou vypsat
+echo '&lt;a href="' . $loginUrl . '"&gt; Prihlasit se&lt;/a&gt;';</code></pre>
+<h2 id="potvrzen-pihlen">Potvrzení přihlášení</h2>
+<p>SkautIS uživatele po úspěšném přihlášení přesměruje na adresu nastavenou v předchozím kroce a pošle nám údaje přes $_POST. Tyto údaje je potřeba předat knihovně aby mohla komunikovat se skautisem.</p>
+<pre><code class="language-php">&lt;?php
+//Na url https://moje-skautska-aplikace.skaut.cz/skautis-login-confirm
+$skautis-&gt;setLoginData($_POST);</code></pre>
+<p><a href="./pouziti.html">Pokračovat na použití</a></p>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://skaut.github.io/docs/Skautis/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

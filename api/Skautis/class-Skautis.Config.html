@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Skautis\Config</title>
+
+	<link rel="stylesheet" href="resources/style.css?95ada9fb523b6ab4fd1c47bb375f713f2cc65542">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Skautis.html">
+						Skautis<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.EventDispatcher.html">
+						EventDispatcher					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Skautis.SessionAdapter.html">
+						SessionAdapter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Skautis.Wsdl.html">
+						Wsdl<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.Wsdl.Decorator.html">
+						Decorator<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.Wsdl.Decorator.Cache.html">
+						Cache					</a>
+
+						</li>
+							</ul></li></ul></li></ul></li>
+				<li>
+					<a href="namespace-Test.html">
+						Test<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Test.Skautis.html">
+						Skautis					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Skautis.Config.html">Config</a></li>
+				<li><a href="class-Skautis.Helpers.html">Helpers</a></li>
+				<li><a href="class-Skautis.Skautis.html">Skautis</a></li>
+				<li><a href="class-Skautis.SkautisQuery.html">SkautisQuery</a></li>
+				<li><a href="class-Skautis.User.html">User</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Skautis.Exception.html">Exception</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Skautis.HelperTrait.html">HelperTrait</a></li>
+			</ul>
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Skautis.InvalidArgumentException.html">InvalidArgumentException</a></li>
+				<li><a href="class-Skautis.StaticClassException.html">StaticClassException</a></li>
+				<li><a href="class-Skautis.UnexpectedValueException.html">UnexpectedValueException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Skautis.html" title="Summary of Skautis"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Config</h1>
+
+
+	<div class="description">
+	<p>Třída pro uživatelské nastavení</p>
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Skautis.html">Skautis</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Skautis.Config.html#5-171" title="Go to source code">src/Config.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Skautis.Config.html#50-66" title="Go to source code">__construct</a>( <span>string <var>$appId</var></span>, <span>boolean <var>$isTestMode</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$cache</var> = <span class="php-keyword1">true</span></span>, <span>boolean <var>$compression</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$appId</var></dt>
+					<dd>Id aplikace od správce skautISu</dd>
+					<dt><var>$isTestMode</var></dt>
+					<dd>používat testovací SkautIS?</dd>
+					<dt><var>$cache</var></dt>
+					<dd>použít kompresi?</dd>
+					<dt><var>$compression</var></dt>
+					<dd>cachovat WDSL?</dd>
+				</dl></div>
+
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Skautis.InvalidArgumentException.html">Skautis\InvalidArgumentException</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAppId" id="_getAppId">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAppId">#</a>
+		<code><a href="source-class-Skautis.Config.html#68-74" title="Go to source code">getAppId</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isTestMode" id="_isTestMode">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isTestMode">#</a>
+		<code><a href="source-class-Skautis.Config.html#76-82" title="Go to source code">isTestMode</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setTestMode" id="_setTestMode">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Skautis.Config.html">Skautis\Config</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setTestMode">#</a>
+		<code><a href="source-class-Skautis.Config.html#84-92" title="Go to source code">setTestMode</a>( <span>boolean <var>$isTestMode</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$isTestMode</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.Config.html">Skautis\Config</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCache" id="_getCache">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCache">#</a>
+		<code><a href="source-class-Skautis.Config.html#94-102" title="Go to source code">getCache</a>( )</code>
+
+		<div class="description short">
+			<p>Zjistí, jestli je WSDL cachované</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Zjistí, jestli je WSDL cachované</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setCache" id="_setCache">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Skautis.Config.html">Skautis\Config</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setCache">#</a>
+		<code><a href="source-class-Skautis.Config.html#104-114" title="Go to source code">setCache</a>( <span>boolean <var>$enabled</var></span> )</code>
+
+		<div class="description short">
+			<p>Vypne/zapne cachovaní WSDL</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Vypne/zapne cachovaní WSDL</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$enabled</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.Config.html">Skautis\Config</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getCompression" id="_getCompression">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getCompression">#</a>
+		<code><a href="source-class-Skautis.Config.html#116-124" title="Go to source code">getCompression</a>( )</code>
+
+		<div class="description short">
+			<p>Zjistí, jestli se používá komprese dotazů na WSDL</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Zjistí, jestli se používá komprese dotazů na WSDL</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setCompression" id="_setCompression">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Skautis.Config.html">Skautis\Config</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setCompression">#</a>
+		<code><a href="source-class-Skautis.Config.html#126-136" title="Go to source code">setCompression</a>( <span> <var>$enabled</var></span> )</code>
+
+		<div class="description short">
+			<p>Vypne/zapne kompresi dotazů na WSDL</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Vypne/zapne kompresi dotazů na WSDL</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$enabled</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.Config.html">Skautis\Config</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getBaseUrl" id="_getBaseUrl">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getBaseUrl">#</a>
+		<code><a href="source-class-Skautis.Config.html#138-146" title="Go to source code">getBaseUrl</a>( )</code>
+
+		<div class="description short">
+			<p>Vací začátek URL adresy</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Vací začátek URL adresy</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getSoapOptions" id="_getSoapOptions">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getSoapOptions">#</a>
+		<code><a href="source-class-Skautis.Config.html#148-170" title="Go to source code">getSoapOptions</a>( )</code>
+
+		<div class="description short">
+			<p>Na základě nastavení vrací argumenty pro SoapClient</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Na základě nastavení vrací argumenty pro SoapClient</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+				<h4>See</h4>
+				<div class="list">
+						\SoapClient<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+	<table class="summary constants" id="constants">
+	<caption>Constants summary</caption>
+	<tr data-order="CACHE_ENABLED" id="CACHE_ENABLED">
+
+		<td class="attributes"><code>boolean</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Skautis.Config.html#11" title="Go to source code"><b>CACHE_ENABLED</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#CACHE_ENABLED" class="anchor">#</a>
+				<code><span class="php-keyword1">true</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="CACHE_DISABLED" id="CACHE_DISABLED">
+
+		<td class="attributes"><code>boolean</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Skautis.Config.html#12" title="Go to source code"><b>CACHE_DISABLED</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#CACHE_DISABLED" class="anchor">#</a>
+				<code><span class="php-keyword1">false</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="TESTMODE_ENABLED" id="TESTMODE_ENABLED">
+
+		<td class="attributes"><code>boolean</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Skautis.Config.html#14" title="Go to source code"><b>TESTMODE_ENABLED</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#TESTMODE_ENABLED" class="anchor">#</a>
+				<code><span class="php-keyword1">true</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="TESTMODE_DISABLED" id="TESTMODE_DISABLED">
+
+		<td class="attributes"><code>boolean</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Skautis.Config.html#15" title="Go to source code"><b>TESTMODE_DISABLED</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#TESTMODE_DISABLED" class="anchor">#</a>
+				<code><span class="php-keyword1">false</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="COMPRESSION_ENABLED" id="COMPRESSION_ENABLED">
+
+		<td class="attributes"><code>boolean</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Skautis.Config.html#17" title="Go to source code"><b>COMPRESSION_ENABLED</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#COMPRESSION_ENABLED" class="anchor">#</a>
+				<code><span class="php-keyword1">true</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="COMPRESSION_DISABLED" id="COMPRESSION_DISABLED">
+
+		<td class="attributes"><code>boolean</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Skautis.Config.html#18" title="Go to source code"><b>COMPRESSION_DISABLED</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#COMPRESSION_DISABLED" class="anchor">#</a>
+				<code><span class="php-keyword1">false</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="URL_TEST" id="URL_TEST">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Skautis.Config.html#20" title="Go to source code"><b>URL_TEST</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#URL_TEST" class="anchor">#</a>
+				<code><span class="php-quote">&quot;http://test-is.skaut.cz/&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="URL_PRODUCTION" id="URL_PRODUCTION">
+
+		<td class="attributes"><code>string</code></td>
+		<td class="name">
+			<code>
+				<a href="source-class-Skautis.Config.html#21" title="Go to source code"><b>URL_PRODUCTION</b></a>
+			</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#URL_PRODUCTION" class="anchor">#</a>
+				<code><span class="php-quote">&quot;https://is.skaut.cz/&quot;</span></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+	<table class="summary properties" id="properties">
+	<caption>Properties summary</caption>
+	<tr data-order="cache" id="$cache">
+		<td class="attributes"><code>
+			protected  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Skautis.Config.html#42-47" title="Go to source code"><var>$cache</var></a>
+
+			<div class="description short">
+				<p>Cachovat WSDL?</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Cachovat WSDL?</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$cache" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	</table>
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

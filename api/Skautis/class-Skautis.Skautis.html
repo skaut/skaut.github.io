@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class Skautis\Skautis</title>
+
+	<link rel="stylesheet" href="resources/style.css?95ada9fb523b6ab4fd1c47bb375f713f2cc65542">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Skautis.html">
+						Skautis<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.EventDispatcher.html">
+						EventDispatcher					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Skautis.SessionAdapter.html">
+						SessionAdapter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Skautis.Wsdl.html">
+						Wsdl<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.Wsdl.Decorator.html">
+						Decorator<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.Wsdl.Decorator.Cache.html">
+						Cache					</a>
+
+						</li>
+							</ul></li></ul></li></ul></li>
+				<li>
+					<a href="namespace-Test.html">
+						Test<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Test.Skautis.html">
+						Skautis					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Skautis.Config.html">Config</a></li>
+				<li><a href="class-Skautis.Helpers.html">Helpers</a></li>
+				<li class="active"><a href="class-Skautis.Skautis.html">Skautis</a></li>
+				<li><a href="class-Skautis.SkautisQuery.html">SkautisQuery</a></li>
+				<li><a href="class-Skautis.User.html">User</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Skautis.Exception.html">Exception</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li><a href="class-Skautis.HelperTrait.html">HelperTrait</a></li>
+			</ul>
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Skautis.InvalidArgumentException.html">InvalidArgumentException</a></li>
+				<li><a href="class-Skautis.StaticClassException.html">StaticClassException</a></li>
+				<li><a href="class-Skautis.UnexpectedValueException.html">UnexpectedValueException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Skautis.html" title="Summary of Skautis"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Skautis</h1>
+
+
+	<div class="description">
+	<p>Třída pro práci se skautISem</p>
+
+<p>Sdružuje všechny komponenty a zprostředkovává jejich komunikaci.</p>
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+<b><span>Skautis\Skautis</span></b>			
+			
+			 uses 
+					<a href="class-Skautis.HelperTrait.html"><span>Skautis\HelperTrait</span></a>
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Skautis.html">Skautis</a><br>
+		
+
+				<b>Author:</b>
+				Hána František <a href="&#109;&#97;&#105;&#x6c;&#x74;o&#58;&#115;&#x69;&#x6e;&#x61;&#99;&#101;&#107;&#x40;&#x67;m&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#115;&#x69;&#x6e;&#x61;&#99;&#101;&#107;&#x40;&#x67;m&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a><br>
+			<b>Located at</b> <a href="source-class-Skautis.Skautis.html#8-185" title="Go to source code">src/Skautis.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#36-44" title="Go to source code">__construct</a>( <span><code><a href="class-Skautis.Wsdl.WsdlManager.html">Skautis\Wsdl\WsdlManager</a></code> <var>$wsdlManager</var></span>, <span><code><a href="class-Skautis.User.html">Skautis\User</a></code> <var>$user</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$wsdlManager</var></dt>
+					<dd></dd>
+					<dt><var>$user</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getWsdlManager" id="_getWsdlManager">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Skautis.Wsdl.WsdlManager.html">Skautis\Wsdl\WsdlManager</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getWsdlManager">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#46-52" title="Go to source code">getWsdlManager</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.Wsdl.WsdlManager.html">Skautis\Wsdl\WsdlManager</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getConfig" id="_getConfig">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Skautis.Config.html">Skautis\Config</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getConfig">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#54-60" title="Go to source code">getConfig</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.Config.html">Skautis\Config</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getUser" id="_getUser">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Skautis.User.html">Skautis\User</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getUser">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#62-68" title="Go to source code">getUser</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.User.html">Skautis\User</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getWebService" id="_getWebService">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Skautis.Wsdl.WebService.html">Skautis\Wsdl\WebService</a></code>|mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getWebService">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#70-79" title="Go to source code">getWebService</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Získá objekt webové služby</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Získá objekt webové služby</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.Wsdl.WebService.html">Skautis\Wsdl\WebService</a></code>|mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="__get" id="___get">
+
+		<td class="attributes"><code>
+			 public 
+
+			WebServiceInterface|mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___get">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#81-90" title="Go to source code">__get</a>( <span>string <var>$name</var></span> )</code>
+
+		<div class="description short">
+			<p>Trocha magie pro snadnější přístup k webovým službám.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Trocha magie pro snadnější přístup k webovým službám.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					WebServiceInterface|mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLoginUrl" id="_getLoginUrl">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLoginUrl">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#92-106" title="Go to source code">getLoginUrl</a>( <span>string|null <var>$backlink</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Vrací URL na přihlášení</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Vrací URL na přihlášení</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$backlink</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getLogoutUrl" id="_getLogoutUrl">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getLogoutUrl">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#108-119" title="Go to source code">getLogoutUrl</a>( )</code>
+
+		<div class="description short">
+			<p>Vrací URL na odhlášení</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Vrací URL na odhlášení</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getRegisterUrl" id="_getRegisterUrl">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getRegisterUrl">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#121-135" title="Go to source code">getRegisterUrl</a>( <span>string|null <var>$backlink</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Vrací URL k registraci</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Vrací URL k registraci</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$backlink</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="setLoginData" id="_setLoginData">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setLoginData">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#137-146" title="Go to source code">setLoginData</a>( <span>array <var>$data</var></span> )</code>
+
+		<div class="description short">
+			<p>Hromadné nastavení po přihlášení</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Hromadné nastavení po přihlášení</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$data</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="isMaintenance" id="_isMaintenance">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_isMaintenance">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#148-156" title="Go to source code">isMaintenance</a>( )</code>
+
+		<div class="description short">
+			<p>Ověřuje, zda je skautIS odstaven pro údržbu</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Ověřuje, zda je skautIS odstaven pro údržbu</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="enableDebugLog" id="_enableDebugLog">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_enableDebugLog">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#158-174" title="Go to source code">enableDebugLog</a>( )</code>
+
+		<div class="description short">
+			<p>Zapne logování všech SOAP callů</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Zapne logování všech SOAP callů</p>
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getDebugLog" id="_getDebugLog">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Skautis.SkautisQuery.html">Skautis\SkautisQuery</a>[]</code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getDebugLog">#</a>
+		<code><a href="source-class-Skautis.Skautis.html#176-184" title="Go to source code">getDebugLog</a>( )</code>
+
+		<div class="description short">
+			<p>Vrací zalogované SOAP cally</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Vrací zalogované SOAP cally</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.SkautisQuery.html">Skautis\SkautisQuery</a>[]</code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+	<table class="summary used">
+	<caption>Methods used from <a href="class-Skautis.HelperTrait.html#methods">Skautis\HelperTrait</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-Skautis.HelperTrait.html#_getInstance">getInstance()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="http://skaut.github.io/docs/Skautis/" class="fa fa-home"> The title</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="http://skaut.github.io/docs/Skautis/">The title</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+                    <div role="main" class="document">
+                        <h1 id="changelog">Changelog</h1>
+<p>Číslování verzí je od verze 2.0.0 v souladu se <a href="http://semver.org/">Sématinckým verzováním</a></p>
+<h2 id="verze-2x">Verze 2.x</h2>
+<h3 id="v200">v2.0.0</h3>
+<ul>
+<li>Změna namespace SkautIS =&gt; Skautis</li>
+<li>Změna třídy SkautIS =&gt; Skautis</li>
+<li>Třídy přímo komunikující se SkautISem vyčlněny do namespace <code>Skautis\Wsdl</code>.</li>
+<li>Třídy a jejich metody přejmenovány na čitelnější verze, např. &quot;WS&quot; -&gt; &quot;WebService&quot;</li>
+<li>Nette komponenty exportovány do vlastního baličku</li>
+<li>Požadována verze PHP &gt;= 5.4</li>
+<li>Konstruktor udělán public</li>
+<li>Singleton zůstavá možností</li>
+<li>Čas odhlášeni ze Skautisu (<code>isLoggedIn</code>, <code>getLogoutDate</code>, <code>setLoginData</code>)</li>
+<li><code>SkautisQuery</code> pro profilování a debugováni</li>
+<li>Dokumentace přesunuta do složky <a href="./docs">docs</a></li>
+<li><a href="http://www.php-fig.org/psr/psr-4/">PSR-4 autoloading</a></li>
+<li>Přidán <code>SessionAdapter</code> pro kompatibilitu s ruzn7mi frameworky</li>
+<li>Při zapnutém profilováni Skautis object uchovává log všech požadavků pomoci <code>SkautisQuery</code></li>
+<li>Přidán <code>Config</code> pro data aktuální instance</li>
+<li>Pomocné prvky typu singleton - <code>getInstance</code> přesunuty do HelperTrait</li>
+<li>Pro zasílání zpráv vytvořena komponenta EventDispatcher (Interface + Trait)</li>
+<li><code>WsdlManager</code> přidán pro práci s WS objekty (obstarává veškerou logiku vytváření objektů webových služeb)</li>
+<li>WebService objekty logují SOAP cally do <code>SkautisQuery</code> vždy, pokud mají zaregistrován listener na událost (náhrada
+za volbu $profiler).</li>
+<li>Abstraktní továrna na objekty webových služeb nahrazena interfacem.</li>
+<li><code>Skautis</code> umožňuje jednoduché logování SOAP callů pomocí metod <code>enableDebugLog()</code> a <code>getDebugLog()</code>.</li>
+<li>Kód obsluhující data přihlášeného uživatele přesunut do nové třídy <code>User</code>.</li>
+<li>Generické výjimky přesunuty do <code>Skautis</code> namespace, výjimky webových služeb přesunuty do <code>Skautis\Wsdl</code> namespace.</li>
+<li><code>BaseException</code> nahrazena pomocí <a href="http://en.wikipedia.org/wiki/Marker_interface_pattern">marker interface</a>, všechny
+výjimky knihovny je možné odchytit pomocí <code>Skautis\Exception</code>.</li>
+<li><code>AuthenticationException</code> a <code>PermissionException</code> dědí od obecnější <code>WsdlException</code>.</li>
+<li><code>WebServiceInterface</code> přidáno. <code>WebService</code> již nedědí od <code>SoapClient</code>.</li>
+<li><code>AbstractDecorator</code> přidán pro specifikování formy dekorátoru.</li>
+<li><code>CacheDecorator</code> přidán pro cachování požadavků na Skautis</li>
+<li><code>CacheInterface</code> přidáno pro použití libovolné cache</li>
+<li><code>ArrayCache</code> přidáno pro cache v ramci jednoho požadavku</li>
+</ul>
+<h2 id="verze-1x">Verze 1.x</h2>
+<h3 id="v124">v1.2.4</h3>
+<p>Moznost pouziti vlastni tridy WS pomoci WSFactory</p>
+<h3 id="v10">v1.0</h3>
+<p>Knihovna vyexportovana z Nette projektu</p>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://skaut.github.io/docs/Skautis/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

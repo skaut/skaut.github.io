@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Trait Skautis\HelperTrait</title>
+
+	<link rel="stylesheet" href="resources/style.css?95ada9fb523b6ab4fd1c47bb375f713f2cc65542">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-Skautis.html">
+						Skautis<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.EventDispatcher.html">
+						EventDispatcher					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Skautis.SessionAdapter.html">
+						SessionAdapter					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Skautis.Wsdl.html">
+						Wsdl<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.Wsdl.Decorator.html">
+						Decorator<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.Wsdl.Decorator.Cache.html">
+						Cache					</a>
+
+						</li>
+							</ul></li></ul></li></ul></li>
+				<li>
+					<a href="namespace-Test.html">
+						Test<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Test.Skautis.html">
+						Skautis					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Skautis.Config.html">Config</a></li>
+				<li><a href="class-Skautis.Helpers.html">Helpers</a></li>
+				<li><a href="class-Skautis.Skautis.html">Skautis</a></li>
+				<li><a href="class-Skautis.SkautisQuery.html">SkautisQuery</a></li>
+				<li><a href="class-Skautis.User.html">User</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Skautis.Exception.html">Exception</a></li>
+			</ul>
+
+			<h3>Traits</h3>
+			<ul>
+				<li class="active"><a href="class-Skautis.HelperTrait.html">HelperTrait</a></li>
+			</ul>
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Skautis.InvalidArgumentException.html">InvalidArgumentException</a></li>
+				<li><a href="class-Skautis.StaticClassException.html">StaticClassException</a></li>
+				<li><a href="class-Skautis.UnexpectedValueException.html">UnexpectedValueException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-Skautis.html" title="Summary of Skautis"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Trait HelperTrait</h1>
+
+
+
+
+
+
+
+
+
+	<div>
+		<h4>Direct Known Users</h4>
+			<a href="class-Skautis.Skautis.html">Skautis\Skautis</a>
+	</div>
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-Skautis.html">Skautis</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-Skautis.HelperTrait.html#9-53" title="Go to source code">src/HelperTrait.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="getInstance" id="_getInstance">
+
+		<td class="attributes"><code>
+			 public static
+
+			<code><a href="class-Skautis.Skautis.html">Skautis\Skautis</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getInstance">#</a>
+		<code><a href="source-class-Skautis.HelperTrait.html#20-52" title="Go to source code">getInstance</a>( <span> <var>$appId</var></span>, <span> <var>$testMode</var> = <span class="php-keyword1">false</span></span>, <span> <var>$cache</var> = <span class="php-keyword1">false</span></span>, <span> <var>$compression</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			<p>Ziska sdilenou instanci Skautis objektu</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Ziska sdilenou instanci Skautis objektu</p>
+
+<p>Ano vime ze to neni officialni pattern
+Jedna se o kockopsa Mezi singletonem a StaticFactory
+Factory metoda na stride kterou instantizuje a novy objekt vytvari jen 1x za beh
+Proc to tak je? Ohled na zpetnou kompatibilitu a out of the box pouzitelnost pro amatery</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Skautis.Skautis.html">Skautis\Skautis</a></code><br>Sdilena instance Skautis knihovny pro cely beh PHP skriptu
+				</div>
+
+
+				<h4>Var</h4>
+				<div class="list">
+						string $appId nastavení appId (nepovinné)<br>
+						bool $testMode funguje v testovacím provozu? - výchozí je testovací mode (nepovinné)<br>
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

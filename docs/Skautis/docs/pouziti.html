@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="http://skaut.github.io/docs/Skautis/" class="fa fa-home"> The title</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="http://skaut.github.io/docs/Skautis/">The title</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+                    <div role="main" class="document">
+                        <h1 id="prace-se-skautisem">Prace se skautisem</h1>
+<p>Když je uživatel přihlášen, je vše připraveno k posílání dotazů na servery SkautISu. SkautIS používá pro komunikaci <a href="http://cs.wikipedia.org/wiki/SOAP">SOAP</a> protokol a k dispozici jsou tyto <a href="http://test-is.skaut.cz/JunakWebservice/">služby</a>.</p>
+<h2 id="jak-vypad-dotaz-na-server">Jak vypadá dotaz na server.</h2>
+<h3 id="objekt-webov-sluby">Objekt webové služby</h3>
+<p>Jednotlivé služby mají vlastní objekt splňující <code>Skautis\Wsdl\WebServiceInterface</code>. Tento objekt je potřeba získat z objektu knihovny. Tento objekt se dá používat nadále samostatně v aplikaci.
+Vyzkoušet si jak vypadají požadavky a odpovědi lze online na <a href="http://ws.skautis.cz/testovani/">ws.skautis.cz/testovani</a>.</p>
+<pre><code class="language-php">//$skautis je nakonfigurovaná knihovna s přihlášeným uživatelem
+
+//V seznamu služeb si najdu jmeno služby kterou chci použít a získám její objekt
+//$sluzba = $skautis-&gt;nazev_webove_sluzby;
+//Pro práci s jednotkami ve  skautisu existuje služba OrganizationUnit
+$organizationUnit = $skautis-&gt;OrganizationUnit; // Skautis\Wsd\WebServiceInterface
+
+//Na webove sluzbe se provádějí akce. Tyto akce zpravidla mají nějaké parametry které se zadávají pomocí asociativního pole
+//$params = ["nazev_atributu" =&gt; "hodnota_atributu"]
+//Například filtrovat podle nadřazené jednotky.
+$params = ["ID_UnitParent " =&gt; "24404"]
+
+//Provedení akce se dá provést dvouma způsoby jediný rozdíl je v zápisu
+//$data = $sluzba-&gt;jmeno_funkce($params);
+//$data = $sluzba-&gt;call('jmeno_funkce', $params);
+
+$data = $organizationUnit-&gt;unitAll($params);
+$data = $organizationUnit-&gt;call('unitAll', $params);</code></pre>
+<h3 id="aliasy-webovch-sluzeb">Aliasy webových sluzeb</h3>
+<p>Názvy služeb jsou dlouhé člověk je nechce psát stále dokola. Proto pro přístup k webové službě skautisu můžeme použít alias webové služby.</p>
+<p>Již předdefinované aliasy jsou k dispozici:</p>
+<ul>
+<li>usr =&gt; user =&gt; UserManagement</li>
+<li>org =&gt; OrganizationUnit</li>
+<li>app =&gt; ApplicationManagement</li>
+<li>event =&gt; events =&gt; Events</li>
+</ul>
+<p>Tyto tři příkazy jsou naprosto ekvivalentní.</p>
+<pre><code class="language-php">//UserManagement je webová služba pro práci s uživateli SkautISu
+//UserDetail je akce na službě UserManagement k získání informací o uživateli
+//1940 je ID uzivatele okres blansko
+
+//Naprosto stejné požadavky
+$data = $skautis-&gt;UserManagement-&gt;UserDetail(array("ID"=&gt;1940));
+$data = $skautis-&gt;user-&gt;UserDetail(array("ID"=&gt;1940));
+$data = $skautis-&gt;usr-&gt;UserDetail(array("ID"=&gt;1940));</code></pre>
+<p><a href="./best_practices.html">Best practices</a></p>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://skaut.github.io/docs/Skautis/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

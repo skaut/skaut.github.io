@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="http://skaut.github.io/docs/Skautis/" class="fa fa-home"> The title</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="http://skaut.github.io/docs/Skautis/">The title</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+                    <div role="main" class="document">
+                        <h1 id="konfigurace">Konfigurace</h1>
+<h2 id="registrace-aplikace">Registrace aplikace</h2>
+<p>Před použitím knihovny je potřeba zaregistrovat aplikaci kterou píšete a získat <strong>Application_ID</strong>. Podrobné informace najdete na  <a href="http://ws.skauting.cz/">ws.skauting.cz</a>.</p>
+<h2 id="testovaci-skautis">Testovaci SkautIS</h2>
+<p>Protože SkautIS obsahuje důležitá a citlivá data, není vhodné používat ho při vývoji. Pro tento účel je zde <a href="http://http://test-is.skaut.cz/">test-is.skaut.cz</a>.</p>
+<h2 id="instanciovani-knihovny">Instanciovani knihovny</h2>
+<p>Centrální část knihovny je třída <code>Skautis\Skautis</code>. Tu je potřeba správně nakonfigurovat.</p>
+<h3 id="rychl-pomoc-singleton-patternu">Rychlé pomocí singleton patternu</h3>
+<p>Toto řešení funguje <em>out of the box</em> s minimálním nastavením. Je vhodné pro aplikace nevyužívající framework.</p>
+<pre><code class="language-php">//ID aplikace ziskane při registraci
+$applicationId = "moje-application-id";
+
+//Indikátor jestli se má použít test-is.skaut.cz
+$isTestMode = true;
+
+//
+$skautis = Skautis\Skautis::getInstance($applicationId, $isTestMode);</code></pre>
+<h3 id="run-vztvoen">Ruční vztvoření</h3>
+<p>Tento způsob je poněkud zdlouhavý, ale dává možnost maximální flexibility.</p>
+<h4 id="konfigurace-1">Konfigurace</h4>
+<p>Veškerá konfigurace je udržována v jediném objektu, který je potřeba vztvořit a nastavit.</p>
+<pre><code class="language-PHP">//ID aplikace ziskane při registraci
+$applicationId = "moje-application-id";
+
+//Indikátor jestli se má použít test-is.skaut.cz
+$isTestMode = true;
+
+//Povol cache pro WSDL
+$cache = $true;
+
+//Povol kompresi pro data přenášená ze SkautISu
+$compression = true;
+
+$config = new Skautis\Config($applicationId, $isTestMode, $cache, $compression);</code></pre>
+<h4 id="session">Session</h4>
+<p>Knihovna uchovává nějaké informace mezi requesty. K maximální kompatibilitě mezi různými frameworky knihovna používá <a href="https://github.com/domnikl/DesignPatternsPHP/tree/master/Structural/Adapter">adapter pattern</a>. Adapter pro <code>$_SESSION</code> je k dispozici v knihovne.</p>
+<pre><code class="language-PHP">//Adapter pro $_SESSION
+$sessionAdapter = new Skautis\SessionAdapter\SessionAdapter();</code></pre>
+<h4 id="webservicefactory">WebServiceFactory</h4>
+<p>Tato komponenta se stará o správné vytváření objektů pro webové služby. Jedná se o <a href="https://github.com/domnikl/DesignPatternsPHP/tree/master/Creational/AbstractFactory">abstract factory pattern</a> který je vhodný když je potřeba pro aplikaci nějakým způsobem upravit vytváření objektů webových služeb. Například přidat logování všech požadavků na SkautIS.</p>
+<pre><code class="language-PHP">$webServiceFactory = new Skautis\Wsdl\WebServiceFactory();</code></pre>
+<h4 id="wsdlmanager">WsdlManager</h4>
+<p>Tato třída se stará o vše okolo požadavků na server.</p>
+<pre><code class="language-PHP">$wsdlManager = new Skautis\Wsdl\WsdlManager($webServiceFactory, $config);</code></pre>
+<h4 id="user">User</h4>
+<p>Na skautis může být přihlášen právě jeden uživatel. Informace o tomto uživateli jsou mezi requesty uloženy v session.</p>
+<pre><code class="language-PHP">$user = new Skautis\User($wsdlManager, $essionAdapter);</code></pre>
+<h4 id="skautis">Skautis</h4>
+<p>Všechno dohromady lepí třída <code>Skautis</code>. To je také objekt se kterým budete pracovat.</p>
+<pre><code class="language-PHP">$skautis = new Skautis\Skautis($wsdlManager, $user);</code></pre>
+<p><a href="./prihlaseni.html">Pokračovat na přihlášení</a></p>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://skaut.github.io/docs/Skautis/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

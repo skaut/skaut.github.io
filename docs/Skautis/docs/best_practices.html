@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="http://skaut.github.io/docs/Skautis/" class="fa fa-home"> The title</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="http://skaut.github.io/docs/Skautis/">The title</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+                    <div role="main" class="document">
+                        <h1 id="best-practices">Best practices</h1>
+<p>Knihovna ve verzi 2.x je poměrně komplexní stvoření a pro co nejlepší využití doporučujeme následující.</p>
+<h2 id="konfigurace-na-jednom-mst">Konfigurace na jednom místě</h2>
+<p>Protože konfigurace je velmi složitá jak je vidět v <a href="./konfigurace.html">kapitole o konfiguraci</a> je dobré ji mít na jednom místě a sdílet ji pro celou aplikaci.
+Může se jednat o samostatný PHP soubor includovany kam je potřeba. Nebo za využití <a href="http://doc.nette.org/cs/2.3/dependency-injection">dependency injection containeru</a>.</p>
+<h2 id="kontrola-pihlen">Kontrola přihlášení</h2>
+<p>Pokud se chystá aplikace provádět dotazy na server je vhodné zkontrolovat zda je uživatel přihlášen s vynucením ověření. Tím se předejde výjímce pro neplatné přihlášení a prodlouží přihlášení o 30 minut.</p>
+<pre><code class="language-PHP">$skautisUser = $skautis-&gt;getUser();
+
+//Lokální kontrola podle času odhlášení
+if (!$skautisUser-&gt;isLoggedIn()) {
+    echo "Je potřeba se první přihlásit.";
+}
+
+//Ověření přihlášení na serveru SkautISu
+if (!$skautisUser-&gt;isLoggedIn(true)) {
+    echo "Je potřeba se první přihlásit.";
+}</code></pre>
+<h3 id="rychlost">Rychlost</h3>
+<p>Vynucení ověření ovšem posílá dotaz na server, což nějakou dobu trvá. Proto není vhodné ho vyžadovat vícekrát než jednou.
+Vhodné řešení by mohlo být namespacovat url ktera pracuji se skautisem my-web.cz/skautis/zbytek_url a použít middleware který by ověřoval přihlášení.</p>
+<h2 id="pouvn-komponent">Používání komponent</h2>
+<p>Knihovna se skladá z mnoha tříd. Mnoho z nich je považováno za interní a po konfiguraci knihvony na ně není dobré sahat.
+Spolehlivé a dopředně kompatibilní je používat <code>Skautis\Skautis</code>, <code>Skautis\Config</code>, <code>Skautis\User</code> a <code>Skautis\Wsdl\WebServiceInterface</code>.</p>
+<h2 id="chytn-vjimek">Chytání výjimek</h2>
+<p>Knihovna používá pro všechny výjimky interface <code>Skautis\Exception</code>.</p>
+<pre><code class="language-PHP">try {
+    //nejaka práce se skautisem
+}
+catch (Skautis\Exception $e) {
+    //Problem se skautisem.
+}
+catch (Exception $e) {
+    //Error 500, neco neocekavaneho se stalo
+}</code></pre>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://skaut.github.io/docs/Skautis/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

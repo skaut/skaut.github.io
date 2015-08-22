@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme.css" type="text/css"/>
+    <link rel="stylesheet" href="http://skaut.github.io/docs/Skautis/css/theme-fixes.css" type="text/css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+</head>
+<body class="wy-body-for-nav">
+
+    <div class="wy-grid-for-nav">
+
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-nav-search">
+                <a href="http://skaut.github.io/docs/Skautis/" class="fa fa-home"> The title</a>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                                    </ul>
+            </div>
+            &nbsp;
+        </nav>
+
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+                        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="http://skaut.github.io/docs/Skautis/">The title</a>
+            </nav>
+
+
+                        <div class="wy-nav-content">
+                <div class="rst-content">
+                    <div role="main" class="document">
+                        <h1 id="webservice">WebService</h1>
+<p>Předpokládejme že chceme logovat každý request na SkautIS a máme třídu <code>Logger</code>.</p>
+<h2 id="decoratorpattern">DecoratorPattern</h2>
+<p>Decorator funguje tak že dostane objekt který dekoruje a on sám implementuje jeho interface a dá se tedy nadále používat místo něj.</p>
+<h2 id="implementace">Implementace</h2>
+<pre><code class="language-PHP">class LoggerDecorator extends Skautis\Wsdl\Decorator\AbstractDecorator
+{
+    protected $logger;
+
+    public function __construct($webService, Logger $logger) {
+        $this-&gt;webService = $webService; //protected $this-&gt;webService od rodiče
+        $this-&gt;logger = $logger;
+    }
+
+    public function call($functionName, array $arguments = [])
+    {
+        try {
+            $this-&gt;webService-&gt;call($functionName, $arguments);
+            $this-&gt;logger-&gt;info("Function '$functionName' with $arguments");
+        }
+        catch (\Exception $e) {
+            $this-&gt;logger-&gt;error("Function '$functionName' with $arguments and exception $e");
+        }
+    }
+}</code></pre>
+<p>Takhle nějak by vypadalo použití. Pro správnou implementaci se podívejte na <a href="./web_service_factory.html">WebServiceFactory</a></p>
+<pre><code class="language-PHP">$logger = new Logger();
+$webService = $skautis-&gt;UserManagement;
+
+//Obalí objekt
+$webService = new LoggerDecorator($webService, $logger);
+
+//Bez jakékoliv změny použije WebService.
+$webService-&gt;UserDetail(['ID_UnitParent' =&gt; '24404']);</code></pre>
+                    </div>
+
+                    <footer>
+                        <hr/>
+                                                Built with <a href="http://couscous.io/">Couscous</a> using a <a href="https://github.com/CouscousPHP/Template-ReadTheDocs">theme</a> based on <a href="https://readthedocs.org/">Read the Docs</a>.
+                    </footer>
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script src="http://skaut.github.io/docs/Skautis/js/theme.js"></script>
+
+    <script>
+        $(function() {
+            // Syntax highlighting
+            hljs.initHighlightingOnLoad();
+        });
+    </script>
+
+</body>
+</html>

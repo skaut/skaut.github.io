@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+
+	<title>File src/Tracy/Panel.php</title>
+
+	<link rel="stylesheet" href="resources/style.css?95ada9fb523b6ab4fd1c47bb375f713f2cc65542">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
+						</li>
+				<li>
+					<a href="namespace-Skautis.html">
+						Skautis<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.Nette.html">
+						Nette<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Skautis.Nette.Tracy.html">
+						Tracy					</a>
+
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Skautis.Nette.CacheAdapter.html">Skautis\Nette\CacheAdapter</a></li>
+				<li><a href="class-Skautis.Nette.SessionAdapter.html">Skautis\Nette\SessionAdapter</a></li>
+				<li><a href="class-Skautis.Nette.SkautisExtension.html">Skautis\Nette\SkautisExtension</a></li>
+				<li><a href="class-Skautis.Nette.Tracy.Panel.html">Skautis\Nette\Tracy\Panel</a></li>
+			</ul>
+
+
+
+
+
+			<h3>Functions</h3>
+			<ul>
+				<li><a href="function-test.html">test</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+<span>Namespace</span>			</li>
+			<li>
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre class="numbers"><code><span class="l"><a href="#1">  1: </a></span><span class="l"><a href="#2">  2: </a></span><span class="l"><a href="#3">  3: </a></span><span class="l"><a href="#4">  4: </a></span><span class="l"><a href="#5">  5: </a></span><span class="l"><a href="#6">  6: </a></span><span class="l"><a href="#7">  7: </a></span><span class="l"><a href="#8">  8: </a></span><span class="l"><a href="#9">  9: </a></span><span class="l"><a href="#10"> 10: </a></span><span class="l"><a href="#11"> 11: </a></span><span class="l"><a href="#12"> 12: </a></span><span class="l"><a href="#13"> 13: </a></span><span class="l"><a href="#14"> 14: </a></span><span class="l"><a href="#15"> 15: </a></span><span class="l"><a href="#16"> 16: </a></span><span class="l"><a href="#17"> 17: </a></span><span class="l"><a href="#18"> 18: </a></span></span><span class="l"><a href="#19"> 19: </a></span></span><span class="l"><a href="#20"> 20: </a></span></span><span class="l"><a href="#21"> 21: </a></span></span><span class="l"><a href="#22"> 22: </a></span><span class="l"><a href="#23"> 23: </a></span><span class="l"><a href="#24"> 24: </a></span><span class="l"><a href="#25"> 25: </a></span><span class="l"><a href="#26"> 26: </a></span><span class="l"><a href="#27"> 27: </a></span><span class="l"><a href="#28"> 28: </a></span><span class="l"><a href="#29"> 29: </a></span><span class="l"><a href="#30"> 30: </a></span><span class="l"><a href="#31"> 31: </a></span><span class="l"><a href="#32"> 32: </a></span><span class="l"><a href="#33"> 33: </a></span><span class="l"><a href="#34"> 34: </a></span><span class="l"><a href="#35"> 35: </a></span><span class="l"><a href="#36"> 36: </a></span><span class="l"><a href="#37"> 37: </a></span><span class="l"><a href="#38"> 38: </a></span><span class="l"><a href="#39"> 39: </a></span><span class="l"><a href="#40"> 40: </a></span><span class="l"><a href="#41"> 41: </a></span><span class="l"><a href="#42"> 42: </a></span><span class="l"><a href="#43"> 43: </a></span><span class="l"><a href="#44"> 44: </a></span><span class="l"><a href="#45"> 45: </a></span><span class="l"><a href="#46"> 46: </a></span><span class="l"><a href="#47"> 47: </a></span><span class="l"><a href="#48"> 48: </a></span></span><span class="l"><a href="#49"> 49: </a></span></span><span class="l"><a href="#50"> 50: </a></span></span><span class="l"><a href="#51"> 51: </a></span></span><span class="l"><a href="#52"> 52: </a></span><span class="l"><a href="#53"> 53: </a></span><span class="l"><a href="#54"> 54: </a></span><span class="l"><a href="#55"> 55: </a></span><span class="l"><a href="#56"> 56: </a></span><span class="l"><a href="#57"> 57: </a></span><span class="l"><a href="#58"> 58: </a></span><span class="l"><a href="#59"> 59: </a></span><span class="l"><a href="#60"> 60: </a></span><span class="l"><a href="#61"> 61: </a></span></span><span class="l"><a href="#62"> 62: </a></span></span><span class="l"><a href="#63"> 63: </a></span></span><span class="l"><a href="#64"> 64: </a></span><span class="l"><a href="#65"> 65: </a></span><span class="l"><a href="#66"> 66: </a></span><span class="l"><a href="#67"> 67: </a></span><span class="l"><a href="#68"> 68: </a></span><span class="l"><a href="#69"> 69: </a></span><span class="l"><a href="#70"> 70: </a></span><span class="l"><a href="#71"> 71: </a></span></span><span class="l"><a href="#72"> 72: </a></span></span><span class="l"><a href="#73"> 73: </a></span></span><span class="l"><a href="#74"> 74: </a></span><span class="l"><a href="#75"> 75: </a></span><span class="l"><a href="#76"> 76: </a></span><span class="l"><a href="#77"> 77: </a></span><span class="l"><a href="#78"> 78: </a></span><span class="l"><a href="#79"> 79: </a></span><span class="l"><a href="#80"> 80: </a></span><span class="l"><a href="#81"> 81: </a></span><span class="l"><a href="#82"> 82: </a></span><span class="l"><a href="#83"> 83: </a></span><span class="l"><a href="#84"> 84: </a></span><span class="l"><a href="#85"> 85: </a></span><span class="l"><a href="#86"> 86: </a></span><span class="l"><a href="#87"> 87: </a></span><span class="l"><a href="#88"> 88: </a></span></span><span class="l"><a href="#89"> 89: </a></span></span><span class="l"><a href="#90"> 90: </a></span></span><span class="l"><a href="#91"> 91: </a></span><span class="l"><a href="#92"> 92: </a></span><span class="l"><a href="#93"> 93: </a></span><span class="l"><a href="#94"> 94: </a></span><span class="l"><a href="#95"> 95: </a></span><span class="l"><a href="#96"> 96: </a></span><span class="l"><a href="#97"> 97: </a></span><span class="l"><a href="#98"> 98: </a></span><span class="l"><a href="#99"> 99: </a></span><span class="l"><a href="#100">100: </a></span><span class="l"><a href="#101">101: </a></span><span class="l"><a href="#102">102: </a></span><span class="l"><a href="#103">103: </a></span><span class="l"><a href="#104">104: </a></span><span class="l"><a href="#105">105: </a></span><span class="l"><a href="#106">106: </a></span><span class="l"><a href="#107">107: </a></span><span class="l"><a href="#108">108: </a></span><span class="l"><a href="#109">109: </a></span><span class="l"><a href="#110">110: </a></span><span class="l"><a href="#111">111: </a></span><span class="l"><a href="#112">112: </a></span><span class="l"><a href="#113">113: </a></span><span class="l"><a href="#114">114: </a></span><span class="l"><a href="#115">115: </a></span><span class="l"><a href="#116">116: </a></span><span class="l"><a href="#117">117: </a></span><span class="l"><a href="#118">118: </a></span></span><span class="l"><a href="#119">119: </a></span></span><span class="l"><a href="#120">120: </a></span></span><span class="l"><a href="#121">121: </a></span><span class="l"><a href="#122">122: </a></span><span class="l"><a href="#123">123: </a></span><span class="l"><a href="#124">124: </a></span><span class="l"><a href="#125">125: </a></span><span class="l"><a href="#126">126: </a></span><span class="l"><a href="#127">127: </a></span><span class="l"><a href="#128">128: </a></span><span class="l"><a href="#129">129: </a></span><span class="l"><a href="#130">130: </a></span><span class="l"><a href="#131">131: </a></span><span class="l"><a href="#132">132: </a></span><span class="l"><a href="#133">133: </a></span></span><span class="l"><a href="#134">134: </a></span></span><span class="l"><a href="#135">135: </a></span></span><span class="l"><a href="#136">136: </a></span><span class="l"><a href="#137">137: </a></span><span class="l"><a href="#138">138: </a></span><span class="l"><a href="#139">139: </a></span><span class="l"><a href="#140">140: </a></span><span class="l"><a href="#141">141: </a></span><span class="l"><a href="#142">142: </a></span><span class="l"><a href="#143">143: </a></span></span><span class="l"><a href="#144">144: </a></span></span><span class="l"><a href="#145">145: </a></span></span><span class="l"><a href="#146">146: </a></span></span><span class="l"><a href="#147">147: </a></span><span class="l"><a href="#148">148: </a></span><span class="l"><a href="#149">149: </a></span><span class="l"><a href="#150">150: </a></span><span class="l"><a href="#151">151: </a></span><span class="l"><a href="#152">152: </a></span><span class="l"><a href="#153">153: </a></span><span class="l"><a href="#154">154: </a></span><span class="l"><a href="#155">155: </a></span><span class="l"><a href="#156">156: </a></span><span class="l"><a href="#157">157: </a></span><span class="l"><a href="#158">158: </a></span></code></pre>
+<pre class="code"><code><span id="1" class="l"><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l">
+</span><span id="3" class="l"><span class="php-keyword1">namespace</span> Skautis\Nette\Tracy;
+</span><span id="4" class="l">
+</span><span id="5" class="l"><span class="php-keyword1">use</span> Nette;
+</span><span id="6" class="l"><span class="php-keyword1">use</span> Skautis\SkautisQuery;
+</span><span id="7" class="l"><span class="php-keyword1">use</span> Skautis\Wsdl\WebService;
+</span><span id="8" class="l"><span class="php-keyword1">use</span> Skautis\Wsdl\WsdlManager;
+</span><span id="9" class="l"><span class="php-keyword1">use</span> Tracy;
+</span><span id="10" class="l">
+</span><span id="11" class="l">
+</span><span id="12" class="l"><span class="php-keyword1">if</span> (!<span class="php-keyword2">interface_exists</span>(<span class="php-quote">'Tracy\IBarPanel'</span>) &amp;&amp; <span class="php-keyword2">interface_exists</span>(<span class="php-quote">'Nette\Diagnostics\IBarPanel'</span>)) {
+</span><span id="13" class="l">    <span class="php-comment">// BC with Nette 2.1</span>
+</span><span id="14" class="l">    <span class="php-keyword2">class_alias</span>(<span class="php-quote">'Nette\Diagnostics\IBarPanel'</span>, <span class="php-quote">'Tracy\IBarPanel'</span>);
+</span><span id="15" class="l">}
+</span><span id="16" class="l">
+</span><span id="17" class="l">
+</span><span id="18" class="l"><span class="php-comment">/**
+</span></span><span id="19" class="l"><span class="php-comment"> * Skautis panel for Tracy.
+</span></span><span id="20" class="l"><span class="php-comment"> *
+</span></span><span id="21" class="l"><span class="php-comment"> * @author Hána František
+</span></span><span id="22" class="l"><span class="php-comment"> */</span>
+</span><span id="23" class="l"><span class="php-keyword1">class</span> Panel <span class="php-keyword1">extends</span> Nette\Object <span class="php-keyword1">implements</span> Tracy\IBarPanel
+</span><span id="24" class="l">{
+</span><span id="25" class="l">
+</span><span id="26" class="l">    <span class="php-comment">/** @var string */</span>
+</span><span id="27" class="l">    <span class="php-keyword1">private</span> <span class="php-var">$htmlPrefix</span>;
+</span><span id="28" class="l">
+</span><span id="29" class="l">    <span class="php-comment">/** @var string */</span>
+</span><span id="30" class="l">    <span class="php-keyword1">private</span> <span class="php-var">$debuggerClass</span>;
+</span><span id="31" class="l">
+</span><span id="32" class="l">    <span class="php-comment">/** @var array */</span>
+</span><span id="33" class="l">    <span class="php-keyword1">private</span> <span class="php-var">$queries</span> = <span class="php-keyword1">array</span>();
+</span><span id="34" class="l">
+</span><span id="35" class="l">
+</span><span id="36" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct()
+</span><span id="37" class="l">    {
+</span><span id="38" class="l">        <span class="php-keyword1">if</span> (!<span class="php-keyword2">class_exists</span>(<span class="php-quote">'Tracy\Debugger'</span>) &amp;&amp; <span class="php-keyword2">class_exists</span>(<span class="php-quote">'Nette\Diagnostics\Debugger'</span>)) {
+</span><span id="39" class="l">            <span class="php-var">$this</span>-&gt;htmlPrefix = <span class="php-quote">'nette'</span>;
+</span><span id="40" class="l">            <span class="php-var">$this</span>-&gt;debuggerClass = <span class="php-quote">'Nette\Diagnostics\Debugger'</span>;
+</span><span id="41" class="l">        } <span class="php-keyword1">else</span> {
+</span><span id="42" class="l">            <span class="php-var">$this</span>-&gt;htmlPrefix = <span class="php-quote">'tracy'</span>;
+</span><span id="43" class="l">            <span class="php-var">$this</span>-&gt;debuggerClass = <span class="php-quote">'Tracy\Debugger'</span>;
+</span><span id="44" class="l">        }
+</span><span id="45" class="l">    }
+</span><span id="46" class="l">
+</span><span id="47" class="l">
+</span><span id="48" class="l">    <span class="php-comment">/**
+</span></span><span id="49" class="l"><span class="php-comment">     * Registers event listener on WebService objects via WsdlManager
+</span></span><span id="50" class="l"><span class="php-comment">     *
+</span></span><span id="51" class="l"><span class="php-comment">     * @param WsdlManager $wsdlManager
+</span></span><span id="52" class="l"><span class="php-comment">     */</span>
+</span><span id="53" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> register(WsdlManager <span class="php-var">$wsdlManager</span>)
+</span><span id="54" class="l">    {
+</span><span id="55" class="l">        <span class="php-var">$wsdlManager</span>-&gt;addWebServiceListener(WebService::EVENT_SUCCESS, <span class="php-keyword1">array</span>(<span class="php-var">$this</span>, <span class="php-quote">'logEvent'</span>));
+</span><span id="56" class="l">        <span class="php-var">$wsdlManager</span>-&gt;addWebServiceListener(WebService::EVENT_FAILURE, <span class="php-keyword1">array</span>(<span class="php-var">$this</span>, <span class="php-quote">'logEvent'</span>));
+</span><span id="57" class="l">        <span class="php-keyword2">call_user_func</span>(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;debuggerClass, <span class="php-quote">'getBar'</span>))-&gt;addPanel(<span class="php-var">$this</span>);
+</span><span id="58" class="l">    }
+</span><span id="59" class="l">
+</span><span id="60" class="l">
+</span><span id="61" class="l">    <span class="php-comment">/**
+</span></span><span id="62" class="l"><span class="php-comment">     * Event logging
+</span></span><span id="63" class="l"><span class="php-comment">     * @param SkautisQuery $query
+</span></span><span id="64" class="l"><span class="php-comment">     */</span>
+</span><span id="65" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> logEvent(SkautisQuery <span class="php-var">$query</span>)
+</span><span id="66" class="l">    {
+</span><span id="67" class="l">        <span class="php-var">$this</span>-&gt;queries[] = <span class="php-var">$query</span>;
+</span><span id="68" class="l">    }
+</span><span id="69" class="l">
+</span><span id="70" class="l">
+</span><span id="71" class="l">    <span class="php-comment">/**
+</span></span><span id="72" class="l"><span class="php-comment">     * Returns HTML code for custom tab. (Tracy\IBarPanel)
+</span></span><span id="73" class="l"><span class="php-comment">     * @return string
+</span></span><span id="74" class="l"><span class="php-comment">     */</span>
+</span><span id="75" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getTab()
+</span><span id="76" class="l">    {
+</span><span id="77" class="l">        <span class="php-var">$totalTime</span> = <span class="php-num">0</span>;
+</span><span id="78" class="l">        <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;queries <span class="php-keyword1">as</span> <span class="php-var">$query</span>) {
+</span><span id="79" class="l">            <span class="php-var">$totalTime</span> += <span class="php-var">$query</span>-&gt;<span class="php-keyword2">time</span>;
+</span><span id="80" class="l">        }
+</span><span id="81" class="l">        <span class="php-keyword1">return</span> <span class="php-quote">'&lt;span title=&quot;skautis&quot;&gt;&lt;img src=&quot;data:image/png;base64,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&quot;&gt;'</span>
+</span><span id="82" class="l">        . <span class="php-keyword2">count</span>(<span class="php-var">$this</span>-&gt;queries) . <span class="php-quote">' queries'</span>
+</span><span id="83" class="l">        . (<span class="php-var">$totalTime</span> ? <span class="php-keyword2">sprintf</span>(<span class="php-quote">' / %0.1f&amp;nbsp;ms'</span>, <span class="php-var">$totalTime</span> * <span class="php-num">1000</span>) : <span class="php-quote">''</span>)
+</span><span id="84" class="l">        . <span class="php-quote">'&lt;/span&gt;'</span>;
+</span><span id="85" class="l">    }
+</span><span id="86" class="l">
+</span><span id="87" class="l">
+</span><span id="88" class="l">    <span class="php-comment">/**
+</span></span><span id="89" class="l"><span class="php-comment">     * Returns HTML code for custom panel. (Tracy\IBarPanel)
+</span></span><span id="90" class="l"><span class="php-comment">     * @return string
+</span></span><span id="91" class="l"><span class="php-comment">     */</span>
+</span><span id="92" class="l">    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> getPanel()
+</span><span id="93" class="l">    {
+</span><span id="94" class="l">        <span class="php-var">$cnt</span> = <span class="php-num">0</span>;
+</span><span id="95" class="l">        <span class="php-var">$s</span> = <span class="php-quote">&quot;&quot;</span>;
+</span><span id="96" class="l">        <span class="php-keyword1">foreach</span> (<span class="php-var">$this</span>-&gt;queries <span class="php-keyword1">as</span> <span class="php-var">$query</span>) {
+</span><span id="97" class="l">            <span class="php-var">$rowId</span> = <span class="php-quote">&quot;</span><span class="php-var">{$this-&gt;htmlPrefix}</span><span class="php-quote">-debug-Skautis-args-row-</span><span class="php-var">$cnt</span><span class="php-quote">&quot;</span>;
+</span><span id="98" class="l">            <span class="php-var">$s</span> .= <span class="php-quote">&quot;&lt;tr&gt;&quot;</span>
+</span><span id="99" class="l">                . <span class="php-quote">&quot;&lt;td&gt;&quot;</span> . <span class="php-keyword2">sprintf</span>(<span class="php-quote">'%0.2f'</span>, <span class="php-var">$query</span>-&gt;<span class="php-keyword2">time</span> * <span class="php-num">1000</span>) . <span class="php-quote">&quot;&lt;/td&gt;&quot;</span>
+</span><span id="100" class="l">                . <span class="php-quote">&quot;&lt;td&gt;</span><span class="php-var">{$query-&gt;fname}</span><span class="php-quote">(&quot;</span> . <span class="php-var">$this</span>-&gt;formatToggle(<span class="php-quote">'Args'</span>, <span class="php-var">$rowId</span>) . <span class="php-quote">&quot;)&lt;div id='</span><span class="php-var">$rowId</span><span class="php-quote">' class='</span><span class="php-var">{$this-&gt;htmlPrefix}</span><span class="php-quote">-collapsed'&gt;&quot;</span> . <span class="php-var">$this</span>-&gt;dump(<span class="php-keyword2">reset</span>(<span class="php-var">$query</span>-&gt;args[<span class="php-num">0</span>])) . <span class="php-quote">&quot;&lt;/div&gt;&lt;/td&gt;&quot;</span>
+</span><span id="101" class="l">                . <span class="php-quote">&quot;&lt;td&gt;&quot;</span> . <span class="php-var">$this</span>-&gt;formatToggle(<span class="php-quote">'Result'</span>). <span class="php-quote">&quot;&lt;div class='</span><span class="php-var">{$this-&gt;htmlPrefix}</span><span class="php-quote">-collapsed'&gt;&quot;</span> . <span class="php-var">$this</span>-&gt;dump(<span class="php-var">$query</span>-&gt;result) . <span class="php-quote">&quot;&lt;/div&gt;&lt;/td&gt;&quot;</span>
+</span><span id="102" class="l">                . <span class="php-quote">&quot;&lt;td&gt;&quot;</span> . <span class="php-var">$this</span>-&gt;prepareTrace(<span class="php-var">$query</span>-&gt;trace) . <span class="php-quote">&quot;&lt;/td&gt;&quot;</span>
+</span><span id="103" class="l">                . <span class="php-quote">&quot;&lt;/tr&gt;&quot;</span>;
+</span><span id="104" class="l">            <span class="php-var">$cnt</span>++;
+</span><span id="105" class="l">        }
+</span><span id="106" class="l">
+</span><span id="107" class="l">        <span class="php-keyword1">return</span> <span class="php-keyword1">empty</span>(<span class="php-var">$this</span>-&gt;queries) ? <span class="php-quote">''</span> :
+</span><span id="108" class="l">            <span class="php-quote">'&lt;h1&gt;Skautis&lt;/h1&gt;'</span>
+</span><span id="109" class="l">            . <span class="php-quote">'&lt;div class=&quot;'</span> . <span class="php-var">$this</span>-&gt;htmlPrefix . <span class="php-quote">'-inner&quot;&gt;'</span>
+</span><span id="110" class="l">            . <span class="php-quote">'&lt;table&gt;'</span>
+</span><span id="111" class="l">            . <span class="php-quote">'&lt;tr&gt;&lt;th&gt;Time&amp;nbsp;ms&lt;/th&gt;&lt;th&gt;Function&amp;nbsp;name&lt;/th&gt;&lt;th&gt;Result&lt;/th&gt;&lt;th&gt;Trace&lt;/th&gt;&lt;/tr&gt;'</span>
+</span><span id="112" class="l">            . <span class="php-var">$s</span>
+</span><span id="113" class="l">            . <span class="php-quote">'&lt;/table&gt;'</span>
+</span><span id="114" class="l">            . <span class="php-quote">'&lt;/div&gt;'</span>;
+</span><span id="115" class="l">    }
+</span><span id="116" class="l">
+</span><span id="117" class="l">
+</span><span id="118" class="l">    <span class="php-comment">/**
+</span></span><span id="119" class="l"><span class="php-comment">     * @param array $trace
+</span></span><span id="120" class="l"><span class="php-comment">     * @return string
+</span></span><span id="121" class="l"><span class="php-comment">     */</span>
+</span><span id="122" class="l">    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> prepareTrace(<span class="php-keyword1">array</span> <span class="php-var">$trace</span>)
+</span><span id="123" class="l">    {
+</span><span id="124" class="l">        <span class="php-var">$s</span> = <span class="php-quote">&quot;&quot;</span>;
+</span><span id="125" class="l">        <span class="php-var">$cnt</span> = <span class="php-num">0</span>;
+</span><span id="126" class="l">        <span class="php-keyword1">foreach</span> (<span class="php-var">$trace</span> <span class="php-keyword1">as</span> <span class="php-var">$f</span>) {
+</span><span id="127" class="l">            <span class="php-var">$s</span> .= <span class="php-quote">&quot;&quot;</span> . ++<span class="php-var">$cnt</span> . <span class="php-quote">&quot;. &quot;</span> . <span class="php-var">$f</span>[<span class="php-quote">'function'</span>] . <span class="php-quote">&quot; (&quot;</span> . (<span class="php-keyword2">array_key_exists</span>(<span class="php-quote">&quot;class&quot;</span>, <span class="php-var">$f</span>) ? <span class="php-quote">&quot;:&quot;</span> . <span class="php-var">$f</span>[<span class="php-quote">'class'</span>] : <span class="php-quote">&quot;&quot;</span>) . (<span class="php-keyword2">array_key_exists</span>(<span class="php-quote">&quot;line&quot;</span>, <span class="php-var">$f</span>) ? <span class="php-quote">&quot;:&quot;</span> . <span class="php-var">$f</span>[<span class="php-quote">'line'</span>] : <span class="php-quote">&quot;&quot;</span>) . <span class="php-quote">&quot;)&quot;</span> . <span class="php-quote">'&lt;br&gt;'</span>;
+</span><span id="128" class="l">        }
+</span><span id="129" class="l">        <span class="php-keyword1">return</span> <span class="php-var">$this</span>-&gt;formatToggle(<span class="php-quote">'Trace'</span>) . <span class="php-quote">&quot;&lt;div class='</span><span class="php-var">{$this-&gt;htmlPrefix}</span><span class="php-quote">-collapsed'&gt;&quot;</span> . <span class="php-var">$s</span> . <span class="php-quote">&quot;&lt;/div&gt;&quot;</span>;
+</span><span id="130" class="l">    }
+</span><span id="131" class="l">
+</span><span id="132" class="l">
+</span><span id="133" class="l">    <span class="php-comment">/**
+</span></span><span id="134" class="l"><span class="php-comment">     * @param mixed $object
+</span></span><span id="135" class="l"><span class="php-comment">     * @return string
+</span></span><span id="136" class="l"><span class="php-comment">     */</span>
+</span><span id="137" class="l">    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> dump(<span class="php-var">$object</span>)
+</span><span id="138" class="l">    {
+</span><span id="139" class="l">        <span class="php-keyword1">return</span> <span class="php-keyword2">call_user_func</span>(<span class="php-keyword1">array</span>(<span class="php-var">$this</span>-&gt;debuggerClass, <span class="php-quote">'dump'</span>), <span class="php-var">$object</span>, <span class="php-keyword1">TRUE</span>);
+</span><span id="140" class="l">    }
+</span><span id="141" class="l">
+</span><span id="142" class="l">
+</span><span id="143" class="l">    <span class="php-comment">/**
+</span></span><span id="144" class="l"><span class="php-comment">     * @param string $name text to display in toggle link
+</span></span><span id="145" class="l"><span class="php-comment">     * @param string|NULL $rel id of toggleable element
+</span></span><span id="146" class="l"><span class="php-comment">     * @return string
+</span></span><span id="147" class="l"><span class="php-comment">     */</span>
+</span><span id="148" class="l">    <span class="php-keyword1">protected</span> <span class="php-keyword1">function</span> formatToggle(<span class="php-var">$name</span>, <span class="php-var">$rel</span> = <span class="php-keyword1">NULL</span>)
+</span><span id="149" class="l">    {
+</span><span id="150" class="l">        <span class="php-comment">// BC with Nette 2.1</span>
+</span><span id="151" class="l">        <span class="php-var">$toggleClass</span> = <span class="php-var">$this</span>-&gt;htmlPrefix === <span class="php-quote">'tracy'</span>
+</span><span id="152" class="l">            ? <span class="php-quote">&quot;</span><span class="php-var">{$this-&gt;htmlPrefix}</span><span class="php-quote">-toggle </span><span class="php-var">{$this-&gt;htmlPrefix}</span><span class="php-quote">-collapsed&quot;</span>
+</span><span id="153" class="l">            : <span class="php-quote">&quot;</span><span class="php-var">{$this-&gt;htmlPrefix}</span><span class="php-quote">-toggler </span><span class="php-var">{$this-&gt;htmlPrefix}</span><span class="php-quote">-toggle-collapsed&quot;</span>;
+</span><span id="154" class="l">        <span class="php-keyword1">return</span> <span class="php-quote">&quot;&lt;a href='#&quot;</span> . (<span class="php-var">$rel</span> === <span class="php-keyword1">NULL</span> ? <span class="php-quote">&quot;&quot;</span> : <span class="php-quote">&quot;</span><span class="php-var">$rel</span><span class="php-quote">' rel='#</span><span class="php-var">$rel</span><span class="php-quote">&quot;</span>) . <span class="php-quote">&quot;' class='</span><span class="php-var">$toggleClass</span><span class="php-quote">'&gt;</span><span class="php-var">$name</span><span class="php-quote">&lt;/a&gt;&quot;</span>;
+</span><span id="155" class="l">    }
+</span><span id="156" class="l">
+</span><span id="157" class="l">}
+</span><span id="158" class="l"></span></code></pre>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?db6c711b648ff4cd62c14515d25f64db3a1446fa"></script>
+<script src="elementlist.js?51e3e9e4af836b3a8881e855b113e42c464de56e"></script>
+</body>
+</html>
