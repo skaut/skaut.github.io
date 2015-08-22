@@ -2,11 +2,10 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="generator" content="ApiGen 2.8.0">
 
 	<title>Class Skautis\Nette\Tracy\Panel</title>
 
-	<link rel="stylesheet" href="resources/style.css?3901564645">
+	<link rel="stylesheet" href="resources/style.css?95ada9fb523b6ab4fd1c47bb375f713f2cc65542">
 
 </head>
 
@@ -17,20 +16,29 @@
 
 
 		<div id="groups">
-			<h3>Namespaces</h3>
+				<h3>Namespaces</h3>
 			<ul>
-				<li class="active"><a href="namespace-Skautis.html">Skautis<span></span></a>
-						<ul>
-				<li class="active"><a href="namespace-Skautis.Nette.html">Nette<span></span></a>
-						<ul>
-				<li class="active"><a href="namespace-Skautis.Nette.Tracy.html">Tracy</a>
+				<li>
+					<a href="namespace-None.html">
+						None					</a>
+
 						</li>
-							</ul></li></ul></li>
-				<li><a href="namespace-Test.html">Test<span></span></a>
+				<li class="active">
+					<a href="namespace-Skautis.html">
+						Skautis<span></span>
+					</a>
+
 						<ul>
-				<li><a href="namespace-Test.Skautis.html">Skautis<span></span></a>
+				<li class="active">
+					<a href="namespace-Skautis.Nette.html">
+						Nette<span></span>
+					</a>
+
 						<ul>
-				<li><a href="namespace-Test.Skautis.Nette.html">Nette</a>
+				<li class="active">
+					<a href="namespace-Skautis.Nette.Tracy.html">
+						Tracy					</a>
+
 						</li>
 							</ul></li></ul></li>
 			</ul>
@@ -60,8 +68,7 @@
 	<form id="search">
 		<input type="hidden" name="cx" value="">
 		<input type="hidden" name="ie" value="UTF-8">
-		<input type="text" name="q" class="text">
-		<input type="submit" value="Search">
+		<input type="text" name="q" class="text" placeholder="Search">
 	</form>
 
 	<div id="navigation">
@@ -76,9 +83,6 @@
 <span>Class</span>			</li>
 		</ul>
 		<ul>
-			<li>
-				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
-			</li>
 		</ul>
 		<ul>
 		</ul>
@@ -89,9 +93,7 @@
 
 
 	<div class="description">
-	
-<p>Skautis panel for Tracy.</p>
-
+	<p>Skautis panel for Tracy.</p>
 	</div>
 
 	<dl class="tree">
@@ -125,17 +127,49 @@ Nette\Object
 
 				<b>Author:</b>
 				Hána František<br>
-		<b>Located at</b> <a href="source-class-Skautis.Nette.Tracy.Panel.html#8-100" title="Go to source code">src/Tracy/Panel.php</a><br>
+			<b>Located at</b> <a href="source-class-Skautis.Nette.Tracy.Panel.html#18-157" title="Go to source code">src/Tracy/Panel.php</a>
+		<br>
 	</div>
 
 
 
 	<table class="summary methods" id="methods">
 	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#36-45" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="register" id="_register">
 
 		<td class="attributes"><code>
 			 public 
+
 			
 			
 			</code>
@@ -143,25 +177,19 @@ Nette\Object
 
 		<td class="name"><div>
 		<a class="anchor" href="#_register">#</a>
-		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#18-27" title="Go to source code">register</a>( <span>Skautis\Skautis <var>$connection</var></span> )</code>
+		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#48-58" title="Go to source code">register</a>( <span>Skautis\Wsdl\WsdlManager <var>$wsdlManager</var></span> )</code>
 
 		<div class="description short">
-			
-<p>Zaregistruje callback ktery Skautis predava WS, pomoci ktereho WS predava
-debug informace</p>
-
+			<p>Registers event listener on WebService objects via WsdlManager</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
-<p>Zaregistruje callback ktery Skautis predava WS, pomoci ktereho WS predava
-debug informace</p>
-
+			<p>Registers event listener on WebService objects via WsdlManager</p>
 
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$connection</var></dt>
+					<dt><var>$wsdlManager</var></dt>
 					<dd></dd>
 				</dl></div>
 
@@ -176,6 +204,7 @@ debug informace</p>
 
 		<td class="attributes"><code>
 			 public 
+
 			
 			
 			</code>
@@ -183,20 +212,21 @@ debug informace</p>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_logEvent">#</a>
-		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#29-35" title="Go to source code">logEvent</a>( <span>Skautis\SkautisQuery <var>$query</var></span> )</code>
+		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#61-68" title="Go to source code">logEvent</a>( <span>Skautis\SkautisQuery <var>$query</var></span> )</code>
 
 		<div class="description short">
-			
-<p>After event notification.</p>
-
+			<p>Event logging</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
-<p>After event notification.</p>
+			<p>Event logging</p>
 
 
-
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$query</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
@@ -209,31 +239,28 @@ debug informace</p>
 
 		<td class="attributes"><code>
 			 public 
-			mixed
+
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getTab">#</a>
-		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#50-63" title="Go to source code">getTab</a>( )</code>
+		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#71-85" title="Go to source code">getTab</a>( )</code>
 
 		<div class="description short">
-			
-<p>Returns HTML code for custom tab. (Tracy\IBarPanel)</p>
-
+			<p>Returns HTML code for custom tab. (Tracy\IBarPanel)</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
-<p>Returns HTML code for custom tab. (Tracy\IBarPanel)</p>
-
+			<p>Returns HTML code for custom tab. (Tracy\IBarPanel)</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>mixed</code><br>mixed<br>
+					string
 				</div>
 
 
@@ -246,31 +273,28 @@ debug informace</p>
 
 		<td class="attributes"><code>
 			 public 
-			mixed
+
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getPanel">#</a>
-		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#65-89" title="Go to source code">getPanel</a>( )</code>
+		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#88-115" title="Go to source code">getPanel</a>( )</code>
 
 		<div class="description short">
-			
-<p>Returns HTML code for custom panel. (Tracy\IBarPanel)</p>
-
+			<p>Returns HTML code for custom panel. (Tracy\IBarPanel)</p>
 		</div>
 
 		<div class="description detailed hidden">
-			
-<p>Returns HTML code for custom panel. (Tracy\IBarPanel)</p>
-
+			<p>Returns HTML code for custom panel. (Tracy\IBarPanel)</p>
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code>mixed</code><br>mixed<br>
+					string
 				</div>
 
 
@@ -283,14 +307,15 @@ debug informace</p>
 
 		<td class="attributes"><code>
 			 protected 
-			
+
+			string
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_prepareTrace">#</a>
-		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#91-98" title="Go to source code">prepareTrace</a>( <span>array <var>$trace</var></span> )</code>
+		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#118-130" title="Go to source code">prepareTrace</a>( <span>array <var>$trace</var></span> )</code>
 
 		<div class="description short">
 			
@@ -300,7 +325,96 @@ debug informace</p>
 			
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$trace</var></dt>
+					<dd></dd>
+				</dl></div>
 
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="dump" id="_dump">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_dump">#</a>
+		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#133-140" title="Go to source code">dump</a>( <span>mixed <var>$object</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$object</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="formatToggle" id="_formatToggle">
+
+		<td class="attributes"><code>
+			 protected 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_formatToggle">#</a>
+		<code><a href="source-class-Skautis.Nette.Tracy.Panel.html#143-155" title="Go to source code">formatToggle</a>( <span>string <var>$name</var></span>, <span>string|null <var>$rel</var> = <span class="php-keyword1">NULL</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$name</var></dt>
+					<dd>text to display in toggle link</dd>
+					<dt><var>$rel</var></dt>
+					<dd>id of toggleable element</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
 
 
 
@@ -330,11 +444,11 @@ debug informace</p>
 </div>
 
 	<div id="footer">
-		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
 	</div>
 </div>
 </div>
-<script src="resources/combined.js?1484710986"></script>
-<script src="elementlist.js?949256734"></script>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+{
+  "name": "skautis/web",
+  "type": "project",
+  "description": "Generates docs and api docs",
+    "require": {
+      "php": ">=5.4",
+      "apigen/apigen": "4.1.*",
+      "couscous/couscous": "1.2.*"
+  }
+}

@@ -1,0 +1,5 @@
+template:
+    url: https://github.com/CouscousPHP/Template-ReadTheDocs
+
+exclude:
+    - vendor
